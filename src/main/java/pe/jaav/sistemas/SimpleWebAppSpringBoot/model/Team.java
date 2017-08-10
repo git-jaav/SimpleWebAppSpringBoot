@@ -1,8 +1,15 @@
 package pe.jaav.sistemas.SimpleWebAppSpringBoot.model;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+
+import javax.persistence.CascadeType;
 
 @Entity
 public class Team {
@@ -13,6 +20,9 @@ public class Team {
 	private String name;	
 	private String location;
 	private String mascotte;
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	private Set<Player> players;
 	
 	
 	public Long getId() {
