@@ -30,7 +30,7 @@ public class SimpleWebAppSpringBootApplication {
 		Team team = new Team();
 		team.setId(10l);
 		team.setLocation("LIMA");
-		team.setName("UTC-CHICLAYO");
+		team.setName("UTC-CHICLAYO ...");
 		list.add(team);
 		
 		team = new Team();
