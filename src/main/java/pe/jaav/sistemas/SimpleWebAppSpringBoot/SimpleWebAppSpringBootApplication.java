@@ -1,7 +1,10 @@
 package pe.jaav.sistemas.SimpleWebAppSpringBoot;
 
-import java.util.ArrayList;
+import java.util.ArrayList;import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import javax.annotation.PostConstruct;
 
@@ -9,8 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import pe.jaav.sistemas.SimpleWebAppSpringBoot.model.Player;
 import pe.jaav.sistemas.SimpleWebAppSpringBoot.model.Team;
 import pe.jaav.sistemas.SimpleWebAppSpringBoot.repository.TeamRepository;
+
 
 @SpringBootApplication
 public class SimpleWebAppSpringBootApplication {
@@ -43,6 +48,12 @@ public class SimpleWebAppSpringBootApplication {
 		team.setId(30l);
 		team.setLocation("LIMA");
 		team.setName("LA U ES LA U");
+		
+		Set<Player> players = new HashSet<Player>();		
+		players.add(new Player("Jugador A","MEDIO CAMPO"));
+		players.add(new Player("Jugador B","DELANTERo CAMPO"));
+		team.setPlayers(players);
+		
 		list.add(team);		
 		TeamRepository.save(list);
 		

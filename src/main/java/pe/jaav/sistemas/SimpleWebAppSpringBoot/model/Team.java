@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 
@@ -21,7 +22,9 @@ public class Team {
 	private String location;
 	private String mascotte;
 	
+	
 	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="teamId")
 	private Set<Player> players;
 	
 	
@@ -48,6 +51,13 @@ public class Team {
 	}
 	public void setMascotte(String mascotte) {
 		this.mascotte = mascotte;
+	}
+	public Set<Player> getPlayers() {
+		return players;
+	}
+
+	public void setPlayers(Set<Player> players) {
+		this.players = players;
 	}
 	
 	

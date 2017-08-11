@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.jaav.sistemas.SimpleWebAppSpringBoot.model.Team;
 import pe.jaav.sistemas.SimpleWebAppSpringBoot.repository.TeamRepository;
 
-@RestController
+//@RestController
 public class TeamController {
 
 	@Autowired
